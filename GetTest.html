@@ -7,12 +7,12 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <title>expressTest</title>
+    <title>Get</title>
 </head>
 
 <body>
     <input type="text"  maxlength="2" placeholder="最小年齡" id="minage">
-    <input type="number"  placeholder="最大年齡" id="maxage">
+    <input type="text"  maxlength="2"  placeholder="最大年齡" id="maxage">
     <button onclick="getStudent()">搜尋</button>
     <div id="view">
     </div>
@@ -44,7 +44,7 @@
             $.ajax({
                 url: 'http://localhost:3000/GetStudent',
                 type: 'GET',
-                data: objReq, 
+                data: objReq,
                 error: function (xhr) {
                     alert('Ajax request 發生錯誤');
                     console(xhr);
@@ -56,7 +56,7 @@
                             `<tr>
                                 <td>${studentList[i].Student_Id}</td>
                                 <td>${studentList[i].Student_Name}</td>
-                                <td>${studentList[i].Student_Age}</td>          
+                                <td>${studentList[i].Student_Age}</td>
                             <tr>            `
                         )
                     }
